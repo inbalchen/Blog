@@ -5,6 +5,8 @@ var mongoose = require("mongoose");
 var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 
+const port = 3000
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -105,7 +107,7 @@ app.delete("/blogs/:id", function(req,res){
 	});
 });
 
-app.listen(3000, function(){
-	console.log("server has started");
+app.listen(port, function(){
+	console.log("Listening on port: ", port);
 });
 
