@@ -8,6 +8,8 @@ create data with mongodb - you will need to change the connection uri string
 
 # To run this
 
+at the background run ```mongod```
+
 ```
 node app.js
 ```
