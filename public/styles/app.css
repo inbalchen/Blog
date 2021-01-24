@@ -1,5 +1,5 @@
 i.icon {
-	font-size: 2em;
+	font-size: 1em;
 }
 
 .container.main {
@@ -17,4 +17,12 @@ i.icon {
 
 .ui.icon.header .icon {
 	font-size: 1.5em;
+}
+
+.item-img {
+	width: 100%;
+}
+
+.body-padding {
+	padding: 20px 0;
 }
