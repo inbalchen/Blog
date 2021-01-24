@@ -6,7 +6,7 @@ install mondodb (https://docs.mongodb.com/manual/installation/)
 
 create data with mongodb - you will need to change the connection uri string
 
-# To run this
+# Usage
 
 at the background run ```mongod```
 
