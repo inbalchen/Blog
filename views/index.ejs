@@ -1,35 +1,46 @@
 <% include ./partials/header %>
 
-<div class="ui main text container">
-	<div class="ui huge header">Blog App</div>
-	<div class="ui top attached segment">
-		<div class="ui divided items">
-			<% blogs.forEach(function(blog){ %>
-				<div class="item">
-					<div class="image">
-						<a href="/blogs/<%= blog._id %>">
-							<img class="item-img" src="<%=blog.image%>">
-						</a>
-					</div>
-					<div class="content">
-						<a class="header" href="/blogs/<%= blog._id %>"><%=blog.title%></a>
-						<div class="meta">
-							<span><%=blog.created.toDateString()%></span>
-						</div>
-						<div class="description">
-							<p><%- blog.body.substring(0,100) %>...</p>
-						</div>
-						<div class="extra">
-							<a class="ui flooated basic teal button" href="/blogs/<%= blog._id %>">Read More <i class="angle right icon"></i></a>
 
+	<div class="ui main text container">
+		<h3 class="ui header">Share what is on your mind..</h3>
+		<% if(blogs.length){ %>
+			<div class="ui top attached segment">
+				<div class="ui divided items">
+					<%blogs.forEach(function(blog){ %>
+						<div class="item">
+							<a class="ui small image" href="/blogs/<%= blog._id %>">
+								<img class="item-img" src="<%=blog.image%>">
+							</a>
+							<div class="content">
+								<a class="header" href="/blogs/<%= blog._id %>"><%=blog.title%></a>
+								<div class="meta">
+									<span><%=blog.created.toDateString()%></span>
+								</div>
+								<div class="description">
+									<p><%- blog.body.substring(0,100) %>...</p>
+								</div>
+								<div class="extra">
+									<a class="ui flooated basic teal button" href="/blogs/<%= blog._id %>">Read More <i class="angle right icon"></i></a>
+								</div>
+							</div>
 						</div>
-					</div>
+					<% }) %>
 				</div>
-			<% }); %>
-		</div>
+				
+			</div>
+			<div class="ui hidden divider content">
+				<a href="/blogs/new" class="item">Add new post</a>
+			</div>
+			
+		<% } else{ %>  
+			<div class="ui main text container">
+				<div class="ui header">No posts yet</div>
+				<div class="ui hidden divider content">
+					
+					<a href="/blogs/new" class="item">Add new post</a>
+				</div>
+			</div>
+		 <% } %>
 	</div>
-</div>
-
-
 
 <% include ./partials/footer %>
