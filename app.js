@@ -24,6 +24,7 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog", blogSchema);
 
+// ## CREATE_SCHEME ##
 // Blog.create({
 // 	title: "Test Blog",
 // 	image: "https://images.pexels.com/photos/1496183/pexels-photo-1496183.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500",
@@ -45,6 +46,7 @@ app.get("/blogs", function(req,res){
 		}
 	});
 });
+
 //new route
 app.get("/blogs/new", function(req,res){
 	res.render("new");
@@ -95,6 +97,7 @@ app.put("/blogs/:id", function(req,res){
 		}
 	});
 });
+
 //delete route
 app.delete("/blogs/:id", function(req,res){
 
