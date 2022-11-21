@@ -5,14 +5,14 @@ var mongoose = require("mongoose");
 var methodOverride = require("method-override");
 var expressSanitizer = require("express-sanitizer");
 
-const port = 3000
+const port = 8000
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-mongoose.connect("mongodb://localhost/restfull_blog_app", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/restfull_blog_app", { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(methodOverride("_method"));
-mongoose.set('useFindAndModify', false);
+// mongoose.set('useFindAndModify', false);
 app.use(expressSanitizer());//after body-parser
 
 var blogSchema = new mongoose.Schema({
